@@ -6,6 +6,11 @@
         <div class="explore"></div>
       </div> -->
       <span class="hex">&#x2B22;</span>
+      <div class="hex-wrapper">
+          <div class="hex-header">{{ numCourses }} New Courses</div>
+        <button class="explore">Explore</button>
+      </div>
+      <span class="hex">&#x2B22;</span>
       <!-- <div class="hexagon">
                 <div class="sub-header"></div>
                 <div class="explore"></div>
@@ -15,7 +20,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data(){
+    return{
+      numCourses: 4
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -51,9 +62,24 @@ export default {};
   left: -100px;
 } */
 
+.row-1{
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
 .hex {
   color: #8fac86;
   font-size: 259.8076px;
   text-shadow: 10px 15px 25px #444444;
+  /* position: relative; */
+
+}
+
+.hex-wrapper{
+  /* position: absolute; */
+}
+.hex-header{
+  font-size: 0.6rem;
+  text-transform: uppercase;
 }
 </style>
