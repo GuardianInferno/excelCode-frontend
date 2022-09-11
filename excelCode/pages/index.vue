@@ -1,5 +1,5 @@
 <template>
- <section class="container">
+  <!-- <section class="container">
   <div class="container-top">
    <div class="module">
     <div id="shape" class="module__shape">
@@ -72,7 +72,23 @@
     </div>
    </div>
   </div>
- </section>
+ </section> -->
+  <div class="main-container">
+    <section class="overhead-container"></section>
+    <section class="intro-section">
+      <div class="typewriter">
+        <h1>Welcome to ibis...</h1>
+      </div>
+    </section>
+    <section class="second-container">
+      <div class="second-text">
+        <h1 class="mission-line-1">
+          Re-defining Computer Science Education for Middle Schoolers
+        </h1>
+        <h2 class="mission-line-2">One Classroom at a Time</h2>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -80,14 +96,92 @@ export default {};
 </script>
 
 <style scoped>
-.container {
+.main-container {
+  background-color: #445464;
+  width: 100vw;
+  height: 92vh;
+}
+
+.overhead-container {
+  background-color: #445464;
+  width: 100vw;
+  height: 10vh;
+}
+
+.intro-section {
+  background-color: #445464;
+  width: 65vw;
+  height: 20vh;
+}
+
+.typewriter h1 {
+  padding-left: 7.5vw;
+  font-size: 4rem;
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15rem; /* Adjust as needed */
+  animation: typing 4s steps(20, end), blink-caret 1s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.second-text {
+  animation: swipe 6s;
+  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+@keyframes swipe {
+  0% {
+    transform: translate(110vw);
+  }
+  66% {
+    transform: translate(105vw);
+  }
+  100% {
+    transform: translate(0vw);
+  }
+}
+
+.mission-line-1 {
+  padding-left: 10vw;
+  font-size: 2.35rem;
+}
+
+.mission-line-2 {
+  padding-left: 12.5vw;
+  font-size: 2.25rem;
+}
+/* .container {
  width: 100vw;
  height: 100vh;
 }
 .container-top {
  width: 100vw;
  height: 50vh;
- /* background-color: #e3f2fd; */
+ background-color: #e3f2fd; 
  display: flex;
  justify-content: space-evenly;
  align-items: center;
@@ -96,7 +190,7 @@ export default {};
 .container-bottom {
  width: 100vw;
  height: 50vh;
- /* background-color: #e3f2fd; */
+ /* background-color: #e3f2fd; 
  display: flex;
  justify-content: space-evenly;
  align-items: center;
@@ -199,5 +293,5 @@ export default {};
  border-top: 1px solid #a5d6a7;
  border-bottom: 1px solid #a5d6a7;
  background-color: #c8e6c9;
-}
+} */
 </style>
