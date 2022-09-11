@@ -1,85 +1,203 @@
 <template>
-  <section class="home">
-    <div class="row-1">
-      <!-- <div class="hexagon">
-        <div class="sub-header"></div>
-        <div class="explore"></div>
-      </div> -->
-      <span class="hex">&#x2B22;</span>
-      <div class="hex-wrapper">
-          <div class="hex-header">{{ numCourses }} New Courses</div>
-        <button class="explore">Explore</button>
-      </div>
-      <span class="hex">&#x2B22;</span>
-      <!-- <div class="hexagon">
-                <div class="sub-header"></div>
-                <div class="explore"></div>
-            </div> -->
+ <section class="container">
+  <div class="container-top">
+   <div class="module">
+    <div id="shape" class="module__shape">
+     <div class="module__shape-shadow-1"></div>
+     <div class="module__shape-shadow-2"></div>
+     <div class="module__shape-shadow-3"></div>
+
+     <div class="module__shape-rec1"></div>
+     <div class="module__shape-rec2"></div>
+     <div class="module__shape-rec3"></div>
+     <div class="module__shape-rec4"></div>
+
+     <div class="module__shape-hover1"></div>
+     <div class="module__shape-hover2"></div>
+     <div class="module__shape-hover3"></div>
+     <div class="module__shape-hover4"></div>
     </div>
-  </section>
+   </div>
+   <div class="module">
+    <div id="shape" class="module__shape">
+     <div class="module__shape-shadow-1"></div>
+     <div class="module__shape-shadow-2"></div>
+     <div class="module__shape-shadow-3"></div>
+
+     <div class="module__shape-rec1"></div>
+     <div class="module__shape-rec2"></div>
+     <div class="module__shape-rec3"></div>
+     <div class="module__shape-rec4"></div>
+
+     <div class="module__shape-hover1"></div>
+     <div class="module__shape-hover2"></div>
+     <div class="module__shape-hover3"></div>
+     <div class="module__shape-hover4"></div>
+    </div>
+   </div>
+  </div>
+  <div class="container-bottom">
+   <div class="module">
+    <div id="shape" class="module__shape">
+     <div class="module__shape-shadow-1"></div>
+     <div class="module__shape-shadow-2"></div>
+     <div class="module__shape-shadow-3"></div>
+
+     <div class="module__shape-rec1"></div>
+     <div class="module__shape-rec2"></div>
+     <div class="module__shape-rec3"></div>
+     <div class="module__shape-rec4"></div>
+
+     <div class="module__shape-hover1"></div>
+     <div class="module__shape-hover2"></div>
+     <div class="module__shape-hover3"></div>
+     <div class="module__shape-hover4"></div>
+    </div>
+   </div>
+   <div class="module">
+    <div id="shape" class="module__shape">
+     <div class="module__shape-shadow-1"></div>
+     <div class="module__shape-shadow-2"></div>
+     <div class="module__shape-shadow-3"></div>
+
+     <div class="module__shape-rec1"></div>
+     <div class="module__shape-rec2"></div>
+     <div class="module__shape-rec3"></div>
+     <div class="module__shape-rec4"></div>
+
+     <div class="module__shape-hover1"></div>
+     <div class="module__shape-hover2"></div>
+     <div class="module__shape-hover3"></div>
+     <div class="module__shape-hover4"></div>
+    </div>
+   </div>
+  </div>
+ </section>
 </template>
 
 <script>
-export default {
-  data(){
-    return{
-      numCourses: 4
-    }
-  }
-};
+export default {};
 </script>
 
 <style scoped>
-.home {
-  height: 94vh;
-  width: 100vw;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* background-color: #fbb12f; */
+.container {
+ width: 100vw;
+ height: 100vh;
+}
+.container-top {
+ width: 100vw;
+ height: 50vh;
+ /* background-color: #e3f2fd; */
+ display: flex;
+ justify-content: space-evenly;
+ align-items: center;
 }
 
-/* .hexagon {
-  height: 0;
-  width: 150px;
-  border-top: 150px solid #8fac86;
-  border-right: 100px solid transparent;
-  border-left: 100px solid transparent;
-  position: relative;
-  transform: rotate(-90deg) scale(0.7);
+.container-bottom {
+ width: 100vw;
+ height: 50vh;
+ /* background-color: #e3f2fd; */
+ display: flex;
+ justify-content: space-evenly;
+ align-items: center;
 }
 
-.hexagon:before {
-  position: absolute;
-  content: "";
-  height: 0;
-  width: 150px;
-  border-bottom: 150px solid #8fac86;
-  border-right: 100px solid transparent;
-  border-left: 100px solid transparent;
-  bottom: 150px;
-  left: -100px;
-} */
-
-.row-1{
-  display: flex;
-  width: 50%;
-  justify-content: space-around;
+.module {
+ width: 30rem;
+ height: 30rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
-.hex {
-  color: #8fac86;
-  font-size: 259.8076px;
-  text-shadow: 10px 15px 25px #444444;
-  /* position: relative; */
-
+.module__shape {
+ position: relative;
+ width: 30rem;
+ height: 30rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
-
-.hex-wrapper{
-  /* position: absolute; */
+.module__shape:hover {
+ transform: translateY(-5px);
+ transition: transform 0.5s;
 }
-.hex-header{
-  font-size: 0.6rem;
-  text-transform: uppercase;
+.module__shape:hover + .module__content {
+ transform: translateY(-7px);
+ transition: transform 0.2s;
+}
+.module__shape:hover > div {
+ cursor: pointer;
+ background-color: #b6deb8;
+}
+.module__shape:hover > .module__shape-shadow-1 {
+ box-shadow: 0px 8px 8px 0px #b3dcfa;
+}
+.module__shape:hover > .module__shape-shadow-2 {
+ box-shadow: 0px -8px 8px 0px #b3dcfa;
+}
+.module__shape:hover > .module__shape-shadow-3 {
+ box-shadow: 0px 8px 8px 0px #b3dcfa;
+}
+.module__shape-shadow-1 {
+ position: absolute;
+ width: 12.5rem;
+ height: 30rem;
+ border-radius: 4px;
+ transform: rotate(-45deg);
+ box-shadow: 0px 8px 8px 0px #cbe7fb;
+}
+.module__shape-shadow-2 {
+ position: absolute;
+ width: 12.5rem;
+ height: 30rem;
+ border-radius: 4px;
+ transform: rotate(90deg);
+ box-shadow: 0px -8px 8px 0px #cbe7fb;
+}
+.module__shape-shadow-3 {
+ position: absolute;
+ width: 12.5rem;
+ height: 30rem;
+ border-radius: 4px;
+ box-shadow: 0px 8px 8px 0px #cbe7fb;
+}
+.module__shape-rec1 {
+ transform: rotate(45deg);
+ position: absolute;
+ width: 12.5rem;
+ height: 30rem;
+ border-radius: 4px;
+ border-top: 1px solid #a5d6a7;
+ border-bottom: 1px solid #a5d6a7;
+ background-color: #c8e6c9;
+}
+.module__shape-rec2 {
+ transform: rotate(-45deg);
+ position: absolute;
+ width: 12.5rem;
+ height: 30rem;
+ border-radius: 4px;
+ border-top: 1px solid #a5d6a7;
+ border-bottom: 1px solid #a5d6a7;
+ background-color: #c8e6c9;
+}
+.module__shape-rec3 {
+ position: absolute;
+ width: 12.5rem;
+ height: 30rem;
+ border-radius: 4px;
+ border-top: 1px solid #a5d6a7;
+ border-bottom: 1px solid #a5d6a7;
+ background-color: #c8e6c9;
+}
+.module__shape-rec4 {
+ transform: rotate(90deg);
+ position: absolute;
+ width: 12.5rem;
+ height: 30rem;
+ border-radius: 4px;
+ border-top: 1px solid #a5d6a7;
+ border-bottom: 1px solid #a5d6a7;
+ background-color: #c8e6c9;
 }
 </style>
