@@ -9,6 +9,7 @@ export const useUserStore = defineStore('user',{
     state: () =>({
         user: null,
         progress: null,
+        token: null,
         
     }),
     actions:{
@@ -17,7 +18,11 @@ export const useUserStore = defineStore('user',{
                 username: username,
                 password: password
             },{withCredentials:true})
-            .then(this.getUser)
+            .then((res)=>{
+                this.getUser
+                this.token = res.data 
+            })
+
         },
 
 
@@ -33,7 +38,11 @@ export const useUserStore = defineStore('user',{
         },
 
         async getUser(){
-            await axios.get(`${backend_url}/users/me`, {withCredentials:true}).then((res)=>{
+            await axios.get(`${backend_url}/users/me`, {
+                headers: {
+                    //@ts-ignore
+                    "Authorization": `Token ${this.token}`
+                }}).then((res)=>{
                 console.log(res.data)
             })
         }
