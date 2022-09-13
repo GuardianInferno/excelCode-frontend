@@ -18,7 +18,6 @@ import { defineComponent } from "vue";
 export default defineComponent({
  data() {
   return {
-   route: this.$route.name,
    loginName: "Login | Sign Up",
   };
  },

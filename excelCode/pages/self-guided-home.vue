@@ -11,7 +11,7 @@
      <h1>Harvey Jiang</h1>
      <h2>Grade 12</h2>
      <div class="achievement-cont">
-      <span class="dot" v-for="achv in courseData">{{
+      <span class="dot" v-for="achv in courseData" :key="achv">{{
        achv.achvID
       }}</span>
      </div>
@@ -24,7 +24,7 @@
     <h2 class="progress-header">Intro to Web Dev</h2>
    </div>
    <div>
-    <div v-for="achv in courseData" class="course-progress-cont">
+    <div v-for="achv in courseData" :key="achv" class="course-progress-cont">
      <div class="dot">{{ achv.achvID }}</div>
      <div class="course-name-cont">
       <h3>{{ achv.courseName }}</h3>
