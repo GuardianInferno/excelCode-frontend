@@ -33,7 +33,7 @@ export const useUserStore = defineStore('user',{
         },
 
         async getUser(){
-            await axios.get(`${backend_url}/`, {withCredentials:true}).then((res)=>{
+            await axios.get(`${backend_url}/users/me`, {withCredentials:true}).then((res)=>{
                 console.log(res.data)
             })
         }
