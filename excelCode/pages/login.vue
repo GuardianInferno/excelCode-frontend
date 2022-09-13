@@ -1,12 +1,13 @@
 <template>
  <div class="container">
   <div class="login-cont">
-   <form action="" method="post" class="form-cont">
+   <form action="" method="post" class="form-cont" @submit.prevent="handleSubmit">
     <input
      class="input-form"
      type="text"
      placeholder="Enter Username"
-     name="uname"
+     name="username"
+     v-model="username"
      required
     />
 
@@ -14,7 +15,8 @@
      class="input-form"
      type="password"
      placeholder="Enter Password"
-     name="psw"
+     name="password"
+     v-model="password"
      required
     />
 
@@ -28,12 +30,25 @@
  </div>
 </template>
 
-<script>
-export default {
- setup() {
-  return {};
- },
-};
+<script setup lang="ts">
+import { ref } from "vue";
+import { useUserStore } from "@/stores/user";
+
+const username = ref('')
+const password = ref('')
+const store = useUserStore()
+const error = ref(null)
+
+const handleSubmit = async() =>{
+    try{
+        await store.login(username.value, password.value)
+        console.log('')
+    } catch (err:any) {
+        error.value = err.message
+        console.log(error)
+    }
+}
+
 </script>
 
 <style scoped>
