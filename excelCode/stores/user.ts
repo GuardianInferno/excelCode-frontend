@@ -19,8 +19,7 @@ export const useUserStore = defineStore('user',{
                 password: password
             },{withCredentials:true})
             .then((res)=>{
-                console.log(res.data)
-                this.token = res.data 
+                this.token = res.data.auth_token 
                 this.getUser()
                 
             })
