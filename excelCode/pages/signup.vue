@@ -2,7 +2,7 @@
  <div class="cont">
   <h1 class="header">Welcome</h1>
   <form
-   @submit.prevent="onSubmit"
+   @submit.prevent="handleSubmit"
    action=""
    method="post"
    class="form-cont"
@@ -12,32 +12,34 @@
     type="text"
     placeholder="Enter Email Address"
     name="email"
+    v-model="email"
    />
    <input
     class="input-form"
     type="text"
     placeholder="Enter Username"
     name="username"
+    v-model="username"
     required
    />
    <input
-    :type="passwordFieldType"
-    v-model="passwordOne"
+    type="password"
+    v-model="password"
     class="input-form"
     placeholder="Enter Password"
     name="password"
     required
    />
-   <div type="password" @click="switchVisibility">show / hide</div>
+   <div type="password">show / hide</div>
    <input
-    :type="passwordFieldType2"
-    v-model="passwordTwo"
+    type="password"
+    v-model="password"
     class="input-form"
     placeholder="Confirm Password"
     name="Confirm-Password"
     required
    />
-   <div type="password" @click="switchVisibility2">show / hide</div>
+   <div type="password">show / hide</div>
    <select id="gradeForm" name="grade-level" required>
     <option value="5">Grade 5</option>
     <option value="6">Grade 6</option>
@@ -53,26 +55,27 @@
  </div>
 </template>
 
-<script>
-export default {
- data() {
-  return {
-   passwordOne: "",
-   passwordTwo: "",
-   passwordFieldType: "password",
-   passwordFieldType2: "password",
-  };
- },
- methods: {
-  switchVisibility() {
-   this.passwordFieldType =
-    this.passwordFieldType === "password" ? "text" : "password";
-  },
-  switchVisibility2() {
-   this.passwordFieldType2 =
-    this.passwordFieldType2 === "password" ? "text" : "password";
-  },
- },
+<script setup lang="ts">
+import { ref } from "vue";
+import { useUserStore } from "@/stores/user";
+
+const username = ref("");
+const password = ref("");
+const email = ref("");
+const store = useUserStore();
+const router = useRouter();
+const error = ref(null);
+
+const handleSubmit = async () => {
+ try {
+  await store.signup(username.value, password.value, email.value);
+  if ((store.$state.redirect = true)) {
+   router.push({ path: "/" });
+  }
+ } catch (err: any) {
+  error.value = err.message;
+  console.error(error);
+ }
 };
 </script>
 

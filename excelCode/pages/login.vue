@@ -1,7 +1,12 @@
 <template>
  <div class="container">
   <div class="login-cont">
-   <form action="" method="post" class="form-cont" @submit.prevent="handleSubmit">
+   <form
+    action=""
+    method="post"
+    class="form-cont"
+    @submit.prevent="handleSubmit"
+   >
     <input
      class="input-form"
      type="text"
@@ -34,21 +39,24 @@
 import { ref } from "vue";
 import { useUserStore } from "@/stores/user";
 
-const username = ref('')
-const password = ref('')
-const store = useUserStore()
-const error = ref(null)
+const username = ref("");
+const password = ref("");
+const router = useRouter();
+const store = useUserStore();
+const error = ref(null);
 
-const handleSubmit = async() =>{
-    try{
-        await store.login(username.value, password.value)
-        console.log('')
-    } catch (err:any) {
-        error.value = err.message
-        console.log(error)
-    }
-}
+const handleSubmit = async () => {
+ try {
+  await store.login(username.value, password.value);
 
+  if ((store.$state.redirect = true)) {
+   router.push({ path: "/" });
+  }
+ } catch (err: any) {
+  error.value = err.message;
+  console.log(error);
+ }
+};
 </script>
 
 <style scoped>
