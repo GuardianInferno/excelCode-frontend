@@ -60,6 +60,7 @@ export default defineComponent({
  width: 40%;
  justify-content: space-around;
  font-family: Arial, Helvetica, sans-serif;
+ margin: 0.5rem;
 }
 
 .route {

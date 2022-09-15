@@ -4,7 +4,7 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
     app:{
         head: {
-          title: "ExcelCode",
+          title: "ibis",
           htmlAttrs: {
             lang: 'en',
           },
