@@ -6,37 +6,42 @@
    >
    <NuxtLink class="route" to="/">Education Home</NuxtLink>
    <div id="login">
-    <NuxtLink class="login" to="/login">{{ loginName }}</NuxtLink>
+
+    <div v-if="store.loggedIn === false">
+        <NuxtLink class="login" to="/login">Login/Signup</NuxtLink>
+    </div>
+
+    <button class="login" v-else @click="handleSubmit">LOGOUT</button>
+
    </div>
   </div>
  </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { ref } from "vue";
+import { useUserStore } from "@/stores/user";
 
-export default defineComponent({
- data() {
-  return {
-   loginName: "Login | Sign Up",
-  };
- },
 
- //  watch: {                          // change the name later
- //   $route(to, from) {
- //    if (this.route === "login") {
- //     console.log(this.route);
- //     this.loginName = "Home";
- //    } else {
- //     console.log(this.route);
- //     this.loginName = "Login | Sign Up";
- //    }
- //   },
- //  },
-});
+const router = useRouter();
+const store = useUserStore();
+const error = ref(null);
+
+const handleSubmit = async () => {
+ try {
+  await store.logoutUser();
+
+  //   if ((store.$state.redirect = true)) {
+  //    router.push({ path: "/" });
+  //   }
+ } catch (err: any) {
+  error.value = err.message;
+  console.log(error);
+ }
+};
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 #navbar {
  display: flex;
  flex-direction: row;
