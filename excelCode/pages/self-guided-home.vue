@@ -8,7 +8,9 @@
      </div>
     </div>
     <div class="user-info">
-     <h1>Harvey Jiang</h1>
+     <h1 v-if="store.userData"> Welcome back, {{store.userData.username}}</h1>
+     <h1 v-else>Not logged in</h1>
+
      <h2>Grade 12</h2>
      <div class="achievement-cont">
       <span class="dot" v-for="achv in courseData" :key="achv">{{
@@ -44,8 +46,17 @@
  </div>
 </template>
 
-<script>
+<script lang="ts">
+import {useUserStore} from '@/stores/user'
 export default {
+    setup(){
+
+        const store = useUserStore()
+        return {store}
+
+
+    },
+
  data() {
   return {
    courseData: [

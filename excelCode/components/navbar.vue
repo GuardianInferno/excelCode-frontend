@@ -11,7 +11,7 @@
         <NuxtLink class="login" to="/login">Login/Signup</NuxtLink>
     </div>
 
-    <button class="login" v-else @click="handleSubmit">LOGOUT</button>
+    <NuxtLink to="/" class="login" v-else @click="handleSubmit">LOGOUT</NuxtLink>
 
    </div>
   </div>
@@ -30,10 +30,6 @@ const error = ref(null);
 const handleSubmit = async () => {
  try {
   await store.logoutUser();
-
-  //   if ((store.$state.redirect = true)) {
-  //    router.push({ path: "/" });
-  //   }
  } catch (err: any) {
   error.value = err.message;
   console.log(error);
