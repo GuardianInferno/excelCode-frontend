@@ -6,8 +6,13 @@
    >
    <NuxtLink class="route" to="/">Education Home</NuxtLink>
    <div id="login">
-    <NuxtLink class="login" to="/login">Login/Signup</NuxtLink>
-    <button class="login" @click="handleSubmit">LOGOUT</button>
+
+    <div v-if="store.loggedIn === false">
+        <NuxtLink class="login" to="/login">Login/Signup</NuxtLink>
+    </div>
+
+    <button class="login" v-else @click="handleSubmit">LOGOUT</button>
+
    </div>
   </div>
  </section>
@@ -16,6 +21,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useUserStore } from "@/stores/user";
+
 
 const router = useRouter();
 const store = useUserStore();
@@ -35,7 +41,7 @@ const handleSubmit = async () => {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 #navbar {
  display: flex;
  flex-direction: row;

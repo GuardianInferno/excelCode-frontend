@@ -64,6 +64,8 @@ export const useUserStore = defineStore('user',{
                     }}).then((res)=>{
                    
                     this.userData = res.data
+                    this.loggedIn = true
+                    console.log(this.loggedIn)
                    console.log(JSON.parse(JSON.stringify(this.userData)))   //parse and stringafy to get the data -
                 })
             } catch (error) {
