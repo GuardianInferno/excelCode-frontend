@@ -1,6 +1,7 @@
 import {defineStore} from 'pinia'
 import axios from 'axios'
 
+
 const backend_url = 'http://127.0.0.1:8000'
 
 
@@ -84,6 +85,7 @@ export const useUserStore = defineStore('user',{
                         "Authorization": `Token ${this.token}`
                     }}).then((res)=>{
                         this.loggedIn = false
+                        this.userData = null
                         console.log(res)
                         console.log("logout")  //parse and stringafy to get the data -
                 })
