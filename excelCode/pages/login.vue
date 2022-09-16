@@ -1,8 +1,8 @@
 <template>
  <div class="container">
-
-    <login />
     <signup />
+    <login />
+    
 
   
  </div>

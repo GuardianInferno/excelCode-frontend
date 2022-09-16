@@ -9,7 +9,7 @@
         <input
             class="input-form"
             type="text"
-            placeholder="Enter Username"
+            placeholder="Username"
             name="username"
             v-model="username"
             required
@@ -18,7 +18,7 @@
         <input
             class="input-form"
             type="password"
-            placeholder="Enter Password"
+            placeholder="Password"
             name="password"
             v-model="password"
             required
@@ -66,7 +66,7 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .form-cont {
  display: flex;
  flex-direction: column;
@@ -78,22 +78,38 @@
  width: 50%;
  height: 10%;
  padding-left: 1.3rem;
- border-radius: 2rem;
+ border-radius: .7rem;
  margin: 2rem;
  color: black;
- background-color: #e7e7ea;
+ background-color: #dadada;
  border: 1px solid #ccc;
  box-sizing: border-box;
+ transition: 0.3s ease-in-out;
+ &:hover{
+        background-color:#fff;
+        border:2px solid;
+    }
+    &:focus{
+        background-color:#fff;
+        outline-color:black ;
+    }
 }
 
 .submit-btn {
  margin: 2rem;
- font-size: 2rem;
- height: 8%;
- width: 20%;
- border-radius: 2rem;
+ font-size: 1.3rem;
+ height: 9%;
+ width: 50%;
+ border-radius: .5rem;
  color: white;
  background-color: black;
+ transition: 0.25s ease all;
+ &:hover{
+        background-color:#fff;
+        color:black;
+        cursor:pointer
+    }
+
 }
 
 .signup-btn {

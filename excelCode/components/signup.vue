@@ -44,14 +44,9 @@
         />
         <div type="password">show / hide</div>
             <select id="gradeForm" name="grade-level" required>
-                <option value="5">Grade 5</option>
-                <option value="6">Grade 6</option>
-                <option value="7">Grade 7</option>
-                <option value="8">Grade 8</option>
-                <option value="9">Grade 9</option>
-                <option value="10">Grade 10</option>
-                <option value="11">Grade 11</option>
-                <option value="12">Grade 12</option>
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+
             </select>
         <button class="submit-btn" type="submit">Signup</button>
         </form>
@@ -89,7 +84,7 @@
    }
    </script>
    
-<style scoped>
+<style scoped lang="scss">
 .cont {
     display: flex;
     flex-direction: column;
@@ -126,9 +121,10 @@
    
 #gradeForm {
     width: 20%;
-    font-size: 1.5rem;
+    font-size: 1rem;
     height: 10%;
-    padding-left: 1.3rem;
+
+    justify-content: center;
     border-radius: 2rem;
     margin: 2rem;
     color: black;
@@ -141,21 +137,29 @@
     font-size: 1rem;
     height: 10%;
     padding:1rem 0rem 1rem 1.3rem;
-    border-radius: 2rem;
-    margin: 2rem;
+    border-radius: .7rem;
+    margin: 1rem;
     color: black;
-    background-color: #e7e7ea;
+    background-color: #dadada;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    &:hover{
+        background-color:#fff;
+        border:2px solid;
+    }
+    &:focus{
+        background-color:#fff;
+        outline-color:black ;
+    }
 }
 
 
 .signup-btn {
-    margin: 2rem;
-    font-size: 2rem;
-    height: 8%;
+    margin: 2.2rem;
+    font-size: 1.4rem;
+    height: 10%;
     width: 40%;
-    border-radius: 2rem;
+    border-radius: .5rem;
     color: white;
     background-color: black;
     text-decoration: none;
@@ -163,7 +167,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: 0.2s ease-out;
+    &:hover{
+        background-color:#fff;
+        color:black;
+        cursor:pointer
+    }
+
 }
+
 
 .signup-cont {
     display: flex;
