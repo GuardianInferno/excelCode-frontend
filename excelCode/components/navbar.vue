@@ -1,9 +1,7 @@
 <template>
  <section id="navbar">
   <div class="nav-container">
-   <NuxtLink class="route" to="/self-guided-home"
-    >Self-Guided</NuxtLink
-   >
+   <NuxtLink class="route" to="/self-guided-home">Profile</NuxtLink>
    <NuxtLink class="route" to="/">Education Home</NuxtLink>
    <div id="login">
 
@@ -71,6 +69,12 @@ const handleSubmit = async () => {
  border-radius: 12px;
  padding: 6.5px 15px;
  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+ transition: ease-in-out 0.3s;
+ &:hover{
+    background-color:#e0e0e0;
+    box-shadow: 0 5px 5px #e0e0e0 ;
+    border: 1px solid #e0e0e0;
+ }
 }
 
 #login {
