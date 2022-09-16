@@ -96,18 +96,20 @@
 }
    
 .submit-btn {
-    margin: 2rem;
-    font-size: 2rem;
-    height: 8%;
-    width: 40%;
-    border-radius: 2rem;
-    color: white;
-    background-color: black;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+ margin: 1rem;
+ font-size: 1.3rem;
+ height: 70%;
+ width: 50%;
+ border-radius: .5rem;
+ color: white;
+ background-color: black;
+ transition: 0.25s ease all;
+ &:hover{
+        background-color:#fff;
+        color:black;
+        cursor:pointer
+    }
+
 }
    
 .form-cont {
@@ -133,9 +135,9 @@
     box-sizing: border-box;
 }
 .input-form {
-    width: 50%;
-    font-size: 1rem;
-    height: 10%;
+    width: 70%;
+    font-size: .8rem;
+    height: 12%;
     padding:1rem 0rem 1rem 1.3rem;
     border-radius: .7rem;
     margin: 1rem;
@@ -143,6 +145,7 @@
     background-color: #dadada;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    transition: 0.3s ease-in-out;
     &:hover{
         background-color:#fff;
         border:2px solid;

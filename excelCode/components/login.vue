@@ -67,6 +67,9 @@
 </script>
 
 <style scoped lang="scss">
+    body{
+        font-family: 'Montserrat';
+    }
 .form-cont {
  display: flex;
  flex-direction: column;
@@ -113,18 +116,24 @@
 }
 
 .signup-btn {
- margin: 2rem;
- font-size: 2rem;
- height: 8%;
- width: 40%;
- border-radius: 2rem;
- color: white;
- background-color: black;
- text-decoration: none;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
+    margin: 2.2rem;
+    font-size: 1.4rem;
+    height: 10%;
+    width: 40%;
+    border-radius: .5rem;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-out;
+    &:hover{
+        background-color:#fff;
+        color:black;
+        cursor:pointer
+    }
 }
 
 .login-cont {
