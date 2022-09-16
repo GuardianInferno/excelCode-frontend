@@ -1,9 +1,10 @@
 <template>
  <section id="navbar">
   <div class="nav-container">
-   <NuxtLink class="route" to="/self-guided-home"
-    >Self-Guided</NuxtLink
-   >
+    <div v-if="store.loggedIn === true">
+        <NuxtLink class="route" to="/self-guided-home">Profile</NuxtLink>
+    </div>
+   <div v-else />
    <NuxtLink class="route" to="/">Education Home</NuxtLink>
    <div id="login">
 
@@ -61,17 +62,23 @@ const handleSubmit = async () => {
  width: 40%;
  justify-content: space-around;
  font-family: Arial, Helvetica, sans-serif;
- margin: 0.5rem;
+ align-items: center;
 }
 
 .route {
  text-decoration: none;
- font-size: 0.75rem;
+ font-size: 0.85rem;
  color: black;
  border: 1px solid #efeff0;
  border-radius: 12px;
- padding: 6.5px 15px;
+ padding: 8px 18px;
  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+ transition: ease-in-out 0.3s;
+ &:hover{
+    background-color:#e0e0e0;
+    box-shadow: 0 5px 5px #e0e0e0 ;
+    border: 1px solid #e0e0e0;
+ }
 }
 
 #login {
