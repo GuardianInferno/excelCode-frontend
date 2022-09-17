@@ -24,6 +24,40 @@
              in culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
+      <div class="cards">
+        <div class="row-1">
+          <div class="card">
+            <img class="img" src="../assets/ibis.jpg" alt="">
+            <h1 class="card-header">This is the card header</h1>
+            <p class="content">         
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+           nisi ut aliquip ex ea commodo consequat.</p>
+            <button class="btn">Click me</button>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="card">
+            <img class="img" src="../assets/ibis.jpg" alt="">
+            <h1 class="card-header">This is the card header</h1>
+            <p class="content">         
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+           nisi ut aliquip ex ea commodo consequat.</p>
+            <button class="btn">Click me</button>
+          </div>
+          <div class="card">
+            <img class="img" src="../assets/ibis.jpg" alt="">
+            <h1 class="card-header">This is the card header</h1>
+            <p class="content">         
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+           nisi ut aliquip ex ea commodo consequat.</p>
+            <button class="btn">Click me</button>
+          </div>
+        </div>
+
+      </div>
     </section>
   </div>
 </template>
@@ -120,8 +154,10 @@ export default {
 
 .info{
   display: flex;
-  height: 100vh;
-  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+  align-items: center;
+  /* justify-content: center; */
   margin-top: 1.75rem;
   /* width: 90vw; */
 
@@ -145,5 +181,57 @@ export default {
   margin: 1rem;
 
 
+}
+
+.cards{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.card{
+ /* font-size: 0.85rem; */
+ /* color: black; */
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ width: 20vw;
+ border: 1px solid #efeff0;
+ border-radius: 12px;
+ padding: 1rem 2rem;
+ box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+.img{
+  height: 5rem;
+}
+
+.card-header{
+  margin: 0.5rem;
+  margin-top: 0.7rem;
+  text-align: center;
+}
+.row-2{
+  transform: translateY(-90%);
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-around;
+}
+
+.btn{
+  margin: 1rem;
+  width: 150px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 12px 0;
+  color: white;
+  background: blue;
+  border: 0.5px solid #fff;
+  position: relative;
+  z-index: 1;
+  transition: color 0.5s;
+  cursor: pointer;
 }
 </style>
