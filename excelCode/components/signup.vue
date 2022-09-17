@@ -1,5 +1,6 @@
 <template>
-    <div class="signup-cont" v-if="store.showComponent === true">
+    <div>
+        <div class="signup-cont" v-if="store.showComponent === true">
         <h1>Have an account?</h1>
         <button class="signup-btn" @click="handleLogin">Login</button>
     </div>
@@ -51,6 +52,8 @@
         <button class="submit-btn" type="submit">Signup</button>
         </form>
     </div>
+    </div>
+   
    </template>
    
    <script setup lang="ts">
