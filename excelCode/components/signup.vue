@@ -51,6 +51,7 @@
         <button class="submit-btn" type="submit">Signup</button>
         </form>
     </div>
+   
    </template>
    
    <script setup lang="ts">
