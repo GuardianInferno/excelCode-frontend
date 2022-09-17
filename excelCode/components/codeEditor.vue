@@ -1,12 +1,14 @@
 <template>
- <iframe id="iframe" srcdoc="codepen clone"></iframe>
- <div id="code">
-  <section id="html">
-   <textarea v-model="contentHTML" placeholder="html"></textarea>
-  </section>
-  <section id="css">
-   <textarea v-model="contentCSS" placeholder="CSS"></textarea>
-  </section>
+ <div class="cont">
+  <div class="code-cont">
+   <section class="inner-code-cont">
+    <textarea v-model="contentHTML" placeholder="html"></textarea>
+   </section>
+   <section class="inner-code-cont">
+    <textarea v-model="contentCSS" placeholder="CSS"></textarea>
+   </section>
+  </div>
+  <iframe id="iframe" srcdoc="codepen clone"></iframe>
  </div>
 </template>
 
@@ -60,53 +62,26 @@ onBeforeUpdate(() => {
 </script>
 
 <style scoped>
-#code {
- width: 25%;
- float: right;
+.cont {
+ height: 100vh;
+ width: 100vw;
+ display: flex;
+ flex-direction: column;
 }
-iframe {
- width: 75%;
- float: left;
- height: 100%;
- border: 0;
- font-family: "PT Sans Narrow", sans-serif;
-}
-#iframes {
- height: 100%;
- width: 75%;
- float: left;
-}
-* {
- margin: 0;
- padding: 0;
-}
-html,
-body {
+
+.code-cont {
+ display: flex;
  width: 100%;
+ height: 50%;
+}
+.inner-code-cont {
+ width: 50%;
  height: 100%;
- position: relative;
 }
-#code {
- float: left;
- width: 25%;
-}
-section {
- float: right;
- height: 33.333333%;
- position: absolute;
- width: 24.7%;
-}
+
 textarea {
- height: 97.6%;
+ height: 100%;
  width: 100%;
-}
-#js {
- bottom: 0;
-}
-#css {
- top: 33.3%;
-}
-#html {
- top: 0;
+ word-wrap: wrap;
 }
 </style>
