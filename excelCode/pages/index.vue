@@ -94,7 +94,7 @@ export default {
 
     /* The typing effect */
   @keyframes typing {
-    from { width: 0 }
+    from { width: 0% }
     to { width: 100%}
   }
 
@@ -118,6 +118,7 @@ export default {
   background-position: center;
   height: 80vh;
   clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+  filter: grayscale(0.85);
 }
 
 .banner-text {
