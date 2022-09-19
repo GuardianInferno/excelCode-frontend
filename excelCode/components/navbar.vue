@@ -1,25 +1,23 @@
 <template>
-  <section id="navbar">
-    <div class="nav-container">
-      <div>
-        <NuxtLink class="route" to="/about">About Us</NuxtLink>
-      </div>
-      <div v-if="store.loggedIn === true">
-        <NuxtLink class="route" to="/self-guided-home">Profile</NuxtLink>
-      </div>
-      <div v-else />
-      <NuxtLink class="route" to="/">Education Home</NuxtLink>
-      <div id="login">
-        <div v-if="store.loggedIn === false">
-          <NuxtLink class="login" to="/login">Login/Signup</NuxtLink>
-        </div>
-
-        <NuxtLink to="/" class="login" v-else @click="handleSubmit"
-          >LOGOUT</NuxtLink
-        >
-      </div>
+ <section id="navbar">
+  <div class="nav-container">
+   <div v-if="store.loggedIn === true">
+    <NuxtLink class="route" to="/self-guided-home">Profile</NuxtLink>
+   </div>
+   <div v-else />
+   <NuxtLink class="route" to="/">Education Home</NuxtLink>
+   <NuxtLink class="route" to="/course">Course</NuxtLink>
+   <div id="login">
+    <div v-if="store.loggedIn === false">
+     <NuxtLink class="login" to="/loginPage">Login/Signup</NuxtLink>
     </div>
-  </section>
+
+    <NuxtLink to="/" class="login" v-else @click="handleSubmit"
+     >LOGOUT</NuxtLink
+    >
+   </div>
+  </div>
+ </section>
 </template>
 
 <script setup lang="ts">
@@ -68,19 +66,19 @@ const handleSubmit = async () => {
 }
 
 .route {
-  text-decoration: none;
-  font-size: 0.85rem;
-  color: black;
-  border: 1px solid #efeff0;
-  border-radius: 12px;
-  padding: 8px 18px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-  transition: ease-in-out 0.3s;
-  &:hover {
-    background-color: #e0e0e0;
-    box-shadow: 0 5px 5px #e0e0e0;
-    border: 1px solid #e0e0e0;
-  }
+ text-decoration: none;
+ font-size: 0.85rem;
+ color: black;
+ border: 1px solid #efeff0;
+ border-radius: 12px;
+ padding: 8px 18px;
+ box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+ transition: ease-in-out 0.3s;
+ &:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 5px 5px #e0e0e0;
+  border: 1px solid #e0e0e0;
+ }
 }
 
 #login {
