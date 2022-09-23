@@ -8,11 +8,8 @@ const backend_url = 'http://127.0.0.1:8000'
 
 export const useUserStore = defineStore('user',{
     state: () =>({
-        user: null,
-        progress: null,
         token: null,
         loggedIn: false,
-        redirect: false,
         userData: null,
         showComponent: null,
 
@@ -88,13 +85,15 @@ export const useUserStore = defineStore('user',{
                         this.loggedIn = false
                         this.userData = null
                         console.log(res)
-                        console.log("logout")  //parse and stringafy to get the data -
+                        console.log("logout") 
                 })
             } catch (error) {
                 console.error(error)
             }
 
-        }
+        },
+
+
 
     },
     getters:{
