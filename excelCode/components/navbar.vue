@@ -66,7 +66,7 @@ const handleSubmit = async () => {
  width: 6rem;
  text-decoration: none;
  font-size: 0.85rem;
- margin:0 3rem 0 3rem;
+ margin:0 2.4rem 0 2.4rem;
  color: black;
  border: 1px solid #efeff0;
  border-radius: 12px;
@@ -90,7 +90,7 @@ const handleSubmit = async () => {
   background-color: #0f2337;
   text-decoration: none;
   padding: 15px;
-  margin: 0 0 0 3rem;
+  margin: 0 0 0 2.4rem;
   border-radius: 12px;
 }
 </style>
