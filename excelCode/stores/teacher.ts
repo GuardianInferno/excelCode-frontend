@@ -10,25 +10,28 @@ interface progress{
 }
 
 interface student{
-    name:string
+    name: string
     progress: progress[]
 
 }
 
 interface classroom{
+    name: string
+    code: string
     student: student[]
 
 }
 
 interface teacher{
+    name: string
     classroom: classroom[]
-    
+
 }
 
 export const useUserInfoStore = defineStore('userInfo',{
-    state: () =>({
-
-
+    state: (): teacher =>({
+        name: null,
+        classroom:[]
 
     }),
 
