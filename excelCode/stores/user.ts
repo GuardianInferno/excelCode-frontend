@@ -13,7 +13,9 @@ export const useUserStore = defineStore('user',{
         userData: null,
         showComponent: null,
         redirect:null,
-        
+        userType: null,
+        userProfile: null,
+
 
     }),
     actions:{
@@ -66,13 +68,30 @@ export const useUserStore = defineStore('user',{
                    
                     this.userData = res.data
                     this.loggedIn = true
-                    console.log(this.loggedIn)
-                   console.log(JSON.parse(JSON.stringify(this.userData)))   //parse and stringafy to get the data -
+                    this.userType = this.userData.user_type
+                    console.log(JSON.parse(JSON.stringify(this.userData)))   //parse and stringafy to get the data -
+                    this.getUserProfile()
                 })
             } catch (error) {
                 console.error(error)
             }
 
+        },
+
+        async getUserProfile(){
+            try{
+                await axios.get(`${backend_url}/${this.userType}`, {
+                    headers:{
+                         //@ts-ignore
+                         "Authorization": `Token ${this.token}`
+                        }}).then((res)=>{
+                            this.userProfile = res.data
+                            console.log(JSON.parse(JSON.stringify(this.userProfile)))
+
+                    })
+                    } catch(error){
+                        console.log(error)
+            }
         },
     
         async logoutUser(){

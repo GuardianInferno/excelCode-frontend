@@ -13,9 +13,7 @@
 
      <h2>Grade 12</h2>
      <div class="achievement-cont">
-      <span class="dot" v-for="achv in courseData" :key="achv">{{
-       achv.achvID
-      }}</span>
+      <span class="dot"></span>
      </div>
     </div>
    </div>
@@ -26,17 +24,17 @@
     <h2 class="progress-header">Intro to Web Dev</h2>
    </div>
    <div>
-    <div v-for="achv in courseData" :key="achv" class="course-progress-cont">
-     <div class="dot">{{ achv.achvID }}</div>
+    <div class="course-progress-cont">
+     <div class="dot"></div>
      <div class="course-name-cont">
-      <h3>{{ achv.courseName }}</h3>
+      <h3></h3>
      </div>
-     <h3 class="spacing">{{ achv.progress }}%</h3>
+     <h3 class="spacing">%</h3>
      <div class="progress-bar-cont">
       <div
        class="progress-bar"
        :style="{
-        width: `${achv.progress}%`,
+        width: `%`,
        }"
       ></div>
      </div>
@@ -46,54 +44,10 @@
  </div>
 </template>
 
-<script lang="ts">
-import {useUserStore} from '@/stores/user'
-export default {
-    setup(){
+<script setup lang="ts">
+    import {useUserStore} from '@/stores/user'
+    const store = useUserStore()
 
-        const store = useUserStore()
-        return {store}
-
-
-    },
-
- data() {
-  return {
-   courseData: [
-    {
-     achvID: 1,
-     courseName: "intro to HTML",
-     progress: 78,
-     achvCompleted: true,
-    },
-    {
-     achvID: 2,
-     courseName: "intro to CSS",
-     progress: 20,
-     achvCompleted: true,
-    },
-    {
-     achvID: 3,
-     courseName: "intermediate CSS",
-     progress: 0,
-     achvCompleted: true,
-    },
-    {
-     achvID: 4,
-     courseName: "intro to JS",
-     progress: 0,
-     achvCompleted: true,
-    },
-    {
-     achvID: 5,
-     courseName: "Final task",
-     progress: 0,
-     achvCompleted: true,
-    },
-   ],
-  };
- },
-};
 </script>
 
 <style scoped>
