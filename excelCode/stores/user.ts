@@ -12,6 +12,8 @@ export const useUserStore = defineStore('user',{
         loggedIn: false,
         userData: null,
         showComponent: null,
+        redirect:null,
+        
 
     }),
     actions:{
