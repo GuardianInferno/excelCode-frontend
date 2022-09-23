@@ -11,7 +11,7 @@ interface progress{
 
 interface student{
     name: string
-    progress: progress[]
+    courses: progress[]
 
 }
 
@@ -24,18 +24,22 @@ interface classroom{
 
 interface teacher{
     name: string
-    classroom: classroom[]
+    classrooms: classroom[]
 
 }
 
 export const useUserInfoStore = defineStore('userInfo',{
     state: (): teacher =>({
         name: null,
-        classroom:[]
-
+        classrooms:[]
     }),
 
     actions:{
+        async getClasses(){
+            try{
+                await axios.get(`${backend_url}/classroom`,) //doublecheck link
+            }
+        }
 
     },
 
