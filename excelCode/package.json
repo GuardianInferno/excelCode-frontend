@@ -10,10 +10,14 @@
     "nuxt": "3.0.0-rc.8"
   },
   "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.13.6",
     "@pinia/nuxt": "^0.4.2",
     "@vueuse/core": "^9.2.0",
+    "@vueuse/motion": "^2.0.0-beta.12",
     "axios": "^0.27.2",
     "pinia": "^2.0.22",
-    "sass": "^1.54.9"
+    "sass": "^1.54.9",
+    "vue3-ace-editor": "^2.2.2"
   }
 }

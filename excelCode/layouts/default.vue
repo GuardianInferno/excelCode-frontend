@@ -1,6 +1,8 @@
 <template>
- <navbar />
- <NuxtPage />
+ <div>
+  <navbar />
+  <NuxtPage />
+ </div>
 </template>
 
 <script>
@@ -14,5 +16,6 @@ body,
  padding: 0;
  margin: 0;
  box-sizing: border-box;
+ font-family: monospace;
 }
 </style>
