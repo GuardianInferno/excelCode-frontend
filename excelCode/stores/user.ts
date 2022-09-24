@@ -8,13 +8,14 @@ const backend_url = 'http://127.0.0.1:8000'
 
 export const useUserStore = defineStore('user',{
     state: () =>({
-        user: null,
-        progress: null,
         token: null,
         loggedIn: false,
-        redirect: false,
         userData: null,
         showComponent: null,
+        redirect:null,
+        userType: null,
+        userProfile: null,
+
 
     }),
     actions:{
@@ -67,13 +68,30 @@ export const useUserStore = defineStore('user',{
                    
                     this.userData = res.data
                     this.loggedIn = true
-                    console.log(this.loggedIn)
-                   console.log(JSON.parse(JSON.stringify(this.userData)))   //parse and stringafy to get the data -
+                    this.userType = this.userData.user_type
+                    console.log(JSON.parse(JSON.stringify(this.userData)))   //parse and stringafy to get the data -
+                    this.getUserProfile()
                 })
             } catch (error) {
                 console.error(error)
             }
 
+        },
+
+        async getUserProfile(){
+            try{
+                await axios.get(`${backend_url}/${this.userType}`, {
+                    headers:{
+                         //@ts-ignore
+                         "Authorization": `Token ${this.token}`
+                        }}).then((res)=>{
+                            this.userProfile = res.data
+                            console.log(JSON.parse(JSON.stringify(this.userProfile)))
+
+                    })
+                    } catch(error){
+                        console.log(error)
+            }
         },
     
         async logoutUser(){
@@ -88,13 +106,15 @@ export const useUserStore = defineStore('user',{
                         this.loggedIn = false
                         this.userData = null
                         console.log(res)
-                        console.log("logout")  //parse and stringafy to get the data -
+                        console.log("logout") 
                 })
             } catch (error) {
                 console.error(error)
             }
 
-        }
+        },
+
+
 
     },
     getters:{

@@ -77,7 +77,7 @@
 
 <script setup lang="ts"></script>
 
-<style scoped>
+<style scoped lang="scss">
 .top-container {
   height: 40vh;
   width: 100vw;
