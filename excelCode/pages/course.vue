@@ -4,15 +4,11 @@
  </div>
 </template>
 
-<script>
-export default {
- setup() {
-  return {};
- },
-};
+<script setup lang="ts">
+
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .cont {
  width: 100vw;
  height: 94vh;
