@@ -76,13 +76,13 @@
   margin: 0 auto;
   width: fit-content;
   animation: 
-    typing 3s steps(45, end),
+    typing 1.5s steps(45, end),
     blink-caret .75s step-end infinite;
 
     /* The typing effect */
   @keyframes typing {
     from { width: 0% }
-    to { width: 100%}
+    to { width: 40%}
   }
 
   /* The typewriter cursor effect */
