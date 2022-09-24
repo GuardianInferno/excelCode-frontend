@@ -46,7 +46,7 @@ export const useUserStore = defineStore('user',{
                 await axios.post(`${backend_url}/auth/users/`, {
                     email:email,
                     username: username,
-                    password: password
+                    password: password,
                 })
                 .then(() =>{
                     this.login(username, password)

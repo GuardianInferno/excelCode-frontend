@@ -37,7 +37,7 @@
         <div type="password">show / hide</div>
         <input
           type="password"
-          v-model="password"
+          v-model="Password"
           class="input-form"
           placeholder="Confirm Password"
           name="Confirm-Password"
@@ -60,6 +60,7 @@ import { useUserStore } from "@/stores/user";
 
 const username = ref("");
 const password = ref("");
+const confirmPassword = ref("")
 const email = ref("");
 const store = useUserStore();
 const router = useRouter();
