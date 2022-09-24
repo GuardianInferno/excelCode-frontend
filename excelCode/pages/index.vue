@@ -62,24 +62,8 @@
   </div>
 </template>
 
-<script>
-// import gsap from "gsap";
+<script setup lang="ts">
 
-export default {
-  // name: "home",
-  // mounted() {
-  //   gsap
-  //     .timeline({ defaults: { duration: 1 } })
-  //     .from(".name", { x: -60, opacity: 0, ease: "power2.in" })
-  //     .from(".description", { x: 60, opacity: 0, ease: "power2.in" })
-  //     .from(".banner-btn", { opacity: 0, ease: "power3.out" });
-  // },
-  data() {
-    return {
-      
-    };
-  },
-};
 </script>
 
 <style scoped lang="scss">
