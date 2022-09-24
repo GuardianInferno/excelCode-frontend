@@ -50,7 +50,7 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 * {
  font-family: Arial, Helvetica, sans-serif;
 }
