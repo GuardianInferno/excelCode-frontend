@@ -2,6 +2,7 @@
     <section id="navbar">
         <div class="nav-container">
             <NuxtLink class="route" to="/">Home</NuxtLink>
+            <NuxtLink class="route" to="/about">About us</NuxtLink>
             <NuxtLink class="route" to="/course">Course</NuxtLink>
 
             <div v-if="store.loggedIn === true">
@@ -64,7 +65,7 @@ const handleSubmit = async () => {
  display: flex;
  justify-content: center;
  align-items: center;
- width: 6rem;
+ width: 6.65rem;
  text-decoration: none;
  font-size: 1rem;
  margin:0 2.4rem 0 2.4rem;
