@@ -63,14 +63,15 @@ const handleSubmit = async () => {
 .route {
  display: flex;
  justify-content: center;
+ align-items: center;
  width: 6rem;
  text-decoration: none;
- font-size: 0.85rem;
+ font-size: 1rem;
  margin:0 2.4rem 0 2.4rem;
  color: black;
  border: 1px solid #efeff0;
  border-radius: 12px;
- padding: 8px 18px;
+ padding: 11px;
  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
  transition: ease-in-out 0.3s;
 

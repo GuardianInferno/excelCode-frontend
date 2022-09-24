@@ -99,7 +99,7 @@
     flex-direction: column;
     align-items: center; */
   background: 
-    url(../assets/ibis.jpg);
+    url(../assets/headbg.jpeg);
   background-size: cover;
   background-position: center;
   height: 80vh;
