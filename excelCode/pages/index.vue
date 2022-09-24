@@ -76,7 +76,7 @@
   margin: 0 auto;
   width: fit-content;
   animation: 
-    typing 3.5s steps(45, end),
+    typing 3s steps(45, end),
     blink-caret .75s step-end infinite;
 
     /* The typing effect */
