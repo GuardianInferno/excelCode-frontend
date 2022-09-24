@@ -2,8 +2,8 @@
   <div class="home">
     <section id="banner">
       <div class="banner-text">
-        <h1 class="name">ibis</h1>
-        <p class="description">I dont know what to put for thes efiels </p>
+        <h1 class="name">Welcome to <span>ibis.</span></h1>
+        <p class="description">sdsfafsaf</p>
         <div class="banner-btn">
           <a href="#"><span></span><b>Blah blah blah</b></a>
           <a href="#"><span></span><b>Blah blah blah</b></a>
@@ -68,10 +68,13 @@
 
 <style scoped lang="scss">
 .name {
+  font-size: 80px;
+  font-family: "Kaushan Script";
   overflow: hidden; 
   border-right: .15em solid orange; 
   white-space: nowrap; 
   margin: 0 auto;
+  width: fit-content;
   animation: 
     typing 3s steps(45, end),
     blink-caret .75s step-end infinite;
@@ -87,9 +90,8 @@
     from, to { border-color: transparent }
     50% { border-color: orange; }
   }
+
 }
-
-
 
 
 #banner {
@@ -111,52 +113,47 @@
   padding-top: 170px;
   width: max-content;
   margin: 0 auto;
-}
 
-.banner-text h1 {
-  font-size: 80px;
-  font-family: "Kaushan Script";
-}
-
-.banner-text p {
-  font-size: 20px;
-  font-style: italic;
+    p {
+      font-size: 20px;
+      font-style: italic;
+    }
 }
 
 .banner-btn {
   margin: 76px auto;
-}
 
-.banner-btn a {
-  width: 150px;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0 10px;
-  padding: 12px 0;
-  color: #fff;
-  border: 0.5px solid #fff;
-  position: relative;
-  z-index: 1;
-  transition: color 0.5s;
-}
+  a {
+    width: 150px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 0;
+    color: #fff;
+    border: 0.5px solid #fff;
+    position: relative;
+    z-index: 1;
+    transition: color 0.5s;
 
-.banner-btn a span {
-  width: 0%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #fff;
-  z-index: -1;
-  transition: 0.5s;
-}
+    &:hover{
+      color: #000;
 
-.banner-btn a:hover span {
-  width: 100%;
-}
+      span{
+        width: 100%;
+      }
+    }
 
-.banner-btn a:hover {
-  color: #000;
+    span {
+      width: 0%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fff;
+      z-index: -1;
+      transition: 0.5s;
+    }
+  }
 }
 
 .description {
@@ -190,7 +187,6 @@
   margin: 5px;
   border-radius: 5px;
   margin: 1rem;
-
 
 }
 
