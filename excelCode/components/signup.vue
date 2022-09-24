@@ -37,7 +37,7 @@
         <div type="password">show / hide</div>
         <input
           type="password"
-          v-model="Password"
+          v-model="password"
           class="input-form"
           placeholder="Confirm Password"
           name="Confirm-Password"
