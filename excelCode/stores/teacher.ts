@@ -1,7 +1,10 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
+import {useUserStore} from '@/stores/user'
+
 const backend_url = 'http://127.0.0.1:8000'
+
 
 interface progress{
     course_name: string
@@ -27,7 +30,6 @@ interface teacher{
     classrooms: classroom[]
 
 }
-
 export const useUserInfoStore = defineStore('userInfo',{
     state: (): teacher =>({
         name: null,
@@ -37,9 +39,18 @@ export const useUserInfoStore = defineStore('userInfo',{
     actions:{
         async getClasses(){
             try{
-                await axios.get(`${backend_url}/classroom`,) //doublecheck link
+                const store = useUserStore()
+                await axios.get(`${backend_url}/classroom/view`,{
+                    headers:{
+                         //@ts-ignore
+                         "Authorization": `Token ${store.token}`
+                        }}).then((res)=>{
+                            console.log(res.data)
+
+                    }) }catch(error){
+                console.log(error)
             }
-        }
+        } 
 
     },
 

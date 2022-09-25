@@ -1,5 +1,5 @@
 <template>
-        <div class="card">
+        <div class="card" @click="onClick">
             <div class="content">
                 <div class="title">
                     Period 3
@@ -9,7 +9,13 @@
 </template>
 
 <script setup lang="ts">
+import { useUserInfoStore } from '~~/stores/teacher';
 
+const store = useUserInfoStore()
+
+const onClick = () =>{
+    store.getClasses()
+}
 
 </script>
 

@@ -96,7 +96,6 @@ export const useUserStore = defineStore('user',{
     
         async logoutUser(){
             try {
-                console.log(this.token)
                 await axios.post(`${backend_url}/auth/token/logout/`, this.token, {
                     
                     headers: {
@@ -109,7 +108,7 @@ export const useUserStore = defineStore('user',{
                         console.log("logout") 
                 })
             } catch (error) {
-                console.error(error)
+                console.log(error)
             }
 
         },
