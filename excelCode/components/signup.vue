@@ -6,9 +6,9 @@
     </div>
     <div class="cont">
       <form
-        @submit.prevent="handleSubmit"
+        @submit.prevent="register"
         action=""
-        method="post"
+        method="POST"
         class="form-cont"
       >
         <input
@@ -57,6 +57,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useUserStore } from "@/stores/user";
+import axios from "axios";
 
 const username = ref("");
 const password = ref("");
@@ -66,6 +67,20 @@ const store = useUserStore();
 const router = useRouter();
 const error = ref(null);
 store.showComponent = true;
+
+const register = async () => {
+  try {
+    const res = await axios.post("/auth/users", {
+      email: email,
+      username: username,
+      password: password,
+    })
+    console.log(res)
+    router.push({ path: "/"})
+  } catch (error) {
+    alert(error)
+  }
+}
 
 const handleSubmit = async () => {
   try {
@@ -83,6 +98,8 @@ const handleLogin = () => {
   store.showComponent = false;
   console.log(store.showComponent);
 };
+
+
 </script>
 
 <style scoped lang="scss">
