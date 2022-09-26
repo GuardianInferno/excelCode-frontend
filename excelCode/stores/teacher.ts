@@ -39,11 +39,10 @@ export const useUserInfoStore = defineStore('userInfo',{
     actions:{
         async getClasses(){
             try{
-                const store = useUserStore()
                 await axios.get(`${backend_url}/classroom/view`,{
                     headers:{
                          //@ts-ignore
-                         "Authorization": `Token ${store.token}`
+                         "Authorization": `Token ${useUserStore().token}`
                         }}).then((res)=>{
                             console.log(res.data)
 
