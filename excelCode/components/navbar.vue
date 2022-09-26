@@ -65,7 +65,7 @@ const handleSubmit = async () => {
  display: flex;
  justify-content: center;
  align-items: center;
- width: 6.65rem;
+ width: 6.7rem;
  text-decoration: none;
  font-size: 1rem;
  margin:0 2rem 0 2rem;
